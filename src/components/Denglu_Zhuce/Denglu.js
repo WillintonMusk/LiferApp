@@ -7,7 +7,7 @@ class Denglu extends Component {
         super(props);
         this.router = context.router;
         this.state = {
-            userInfo:{"account":"willinton","password":"willinton","status":1,
+            userInfo:{"account":"willinton","password":"willinton","status":2,
                 "avatar":"https://avatars3.githubusercontent.com/u/20676205?v=4"
             },
             bgColor:"rgba(102,102,102,0.5)"

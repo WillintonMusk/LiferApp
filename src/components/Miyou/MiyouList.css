@@ -1,0 +1,41 @@
+       .ProfilePhoto{
+		float:left;
+		width: 30%;
+		height:60%;
+		border: 1px solid gray;
+		margin:1%;
+		}
+		.imformation{
+         
+		height: 60%;
+		width: 55%;
+		}
+		.CardId{
+		    float: left;
+            width: 35%;
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            margin-left:5%;
+            height:200px;
+            padding: 10px;
+            border:1px solid grey;
+		}
+		.username{
+			margin-bottom: 3px;
+			margin-top: 10px;
+			display: inline-block;
+		}
+		.introduce{
+         
+			margin-left: 2%;
+			font-size: 12px;
+			font-family: "sans-serif";
+		}
+		.flag1{
+			float: right;
+			display: inline-block;
+			margin-top: 8px;
+			font-weight: bold;
+			font-size: 13px;
+			background-color: #FFFF70;
+		}

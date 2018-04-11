@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Search_Miju from './Search_Miju';
 import '../Search.css';
 import MijuList from './MijuList'
@@ -7,6 +7,7 @@ class Miju extends Component {
     super(props);
     // this.search = this.search.bind(this);
     this.state = {
+      user:null,
       search_Name:'',
       search_City:'',
       search_zhengzu:'',
@@ -14,14 +15,15 @@ class Miju extends Component {
       search_xiaoqu:'',
       search_dianti:'',
       search_jingzhuangxiu:'',
-      search_jingdianti:''
+      search_jingditie:''
     };
   }
    
    componentWillMount(){
+    this.setState({user:this.props.user});
      var searchName=this.props.params.searchName;
      var searchCity=this.props.params.searchCity;
-     if (searchName=="none"&&searchCity=="none"){
+     if (searchName==="none"&&searchCity==="none"){
       return
      }
      this.setState({
@@ -31,7 +33,7 @@ class Miju extends Component {
    }
 
     setSearch=(Name,City,zhengzu,danjian,
-    xiaoqu,dianti,jingzhuangxiu,jingdianti)=>{
+    xiaoqu,dianti,jingzhuangxiu,jingditie)=>{
 
         this.setState({
           search_Name:Name,
@@ -41,15 +43,17 @@ class Miju extends Component {
           search_xiaoqu:xiaoqu,
           search_dianti:dianti,
           search_jingzhuangxiu:jingzhuangxiu,
-          search_jingdianti:jingdianti
+          search_jingditie:jingditie
 });
   }
 
   render () {
     return (
       <div>
-        <Search_Miju setSearch={this.setSearch}/>
-        <MijuList searchName={this.state.search_Name}/>
+        <Search_Miju setSearch={this.setSearch} user={this.state.user}/>
+        <MijuList searchName={this.state.search_Name} searchCity={this.state.search_City} searchZhengzu={this.state.search_zhengzu} searchDanjian={this.state.search_danjian}
+        is_community={this.state.search_xiaoqu} elevator={this.state.search_dianti} fine_decoration={this.state.search_jingzhuangxiu}
+        subway={this.state.search_jingditie}/>
       </div>
     );
   }

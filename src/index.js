@@ -20,7 +20,7 @@ render((
         <Route path="/" component={App}>
             <IndexRoute component={Home}/>
 
-            <Route path="/Denglu&Zhuce" component={Denglu}/>
+            {/*<Route path="/Denglu&Zhuce" component={Denglu}/>*/}
             <Route path="/Zhuce" component={Zhuce}/>
 
             <Route path="/Miju/:searchName/:searchCity" component={Miju}/>

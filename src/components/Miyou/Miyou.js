@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Search_Miyou from './Search_Miyou';
 import '../Search.css';
 import MiyouList from './MiyouList'
@@ -15,7 +15,12 @@ class Miyou extends Component {
       search_RejectNoise:''
     };
   }
-
+componentWillMount(){
+  this.setState({
+  search_Name:this.props.searchName,
+  search_City:this.props.searchCity
+  });
+}
   setSearch=(Name,City,Sex,RejectPets,
     RejectSmoking,RejectNoise)=>{
 
@@ -33,7 +38,8 @@ class Miyou extends Component {
     return (
       <div>
         <Search_Miyou setSearch={this.setSearch}/>
-        <MiyouList searchName={this.state.search_Name}/>
+        <MiyouList searchName={this.state.search_Name} searchCity={this.state.search_City} searchSex={this.state.search_Sex} 
+        noPets={this.state.search_RejectPets} noSmoking={this.state.search_RejectSmoking} noNoise={this.state.search_RejectNoise}/>
       </div>
     );
   }

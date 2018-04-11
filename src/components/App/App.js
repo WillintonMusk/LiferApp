@@ -20,15 +20,23 @@ export default class App extends React.Component {
         super(props);
         this.state={
             userInfo:{"account":"","status":0,"avatar":""},
-            display: "none"
+            display: "none",
+            error:"",
+            socket:"",
+            searchName:"",
+            searchCity:""
         };
     }
 
     setTopBar=()=>{
         if(this.state.userInfo.status===0){
-            return(<Link onClick={this.setDialog}>登录/注册</Link>);
-        }else if(this.state.userInfo.status===1){
-            return(<Link to="/Personal_page" activeClassName="active"><img className="avatar" src={this.state.userInfo.avatar}/></Link>);
+            return(<Link onClick={this.setDialog}>登录/注册|</Link>);
+        }
+        else if(this.state.userInfo.status===1){
+            return(<Link to="/Personal_page" ><img className="avatar" src={this.state.userInfo.avatar}/></Link>);
+        }
+        else{
+            return(<Link to="/Personal_page" ><img className="avatar" src={this.state.userInfo.avatar}/></Link>);
         }
     }
 
@@ -50,13 +58,30 @@ export default class App extends React.Component {
         }
     }
 
-    // displayChildren=()=>{
-    //     if(this.props.children.type.name==="Denglu"){
-    //         return(React.cloneElement(this.props.children,{setAccount:this.setAccount}));
-    //     }else{
-    //         return(this.props.children);
-    //     }
-    // }
+    updateSearch=(newsearchCity,newsearchName)=>{
+        this.setState({
+            searchCity:newsearchCity,
+            searchName:newsearchName
+        });
+    }
+
+    displayChildren=()=>{
+        if(this.props.children.type.name==="Miju"){
+            return(React.cloneElement(this.props.children, {user: this.state.userInfo}));
+        }
+        else if(this.props.children.type.name==="Miyou"){
+            return(React.cloneElement(this.props.children, {searchName:this.state.searchName,searchCity:this.state.searchCity}));
+        }
+        else if(this.props.children.type.name==="Home"){
+            return(React.cloneElement(this.props.children, {updateSearch: this.updateSearch}));
+        }
+        else if(this.props.children.type.name==="Jiaoyou"){
+            return(React.cloneElement(this.props.children, {searchName:this.state.searchName,searchCity:this.state.searchCity}));
+        }
+        else{
+            return(this.props.children);
+        }
+    }
 
     render(){
         return(
@@ -78,7 +103,7 @@ export default class App extends React.Component {
 
             <Denglu setAccount={this.setAccount} setDialog={this.setDialog} display={this.state.display}/>
             {/*<Zhuce*/}
-            {this.props.children}
+            {this.displayChildren()}
 
         </div>
         );

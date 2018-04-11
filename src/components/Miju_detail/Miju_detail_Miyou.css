@@ -1,0 +1,37 @@
+       .Muju_detail_ProfilePhoto{
+		float:left;
+		width: 80px;
+		height:80px;
+		border: 1px solid gray;
+		margin:6px;
+		}
+		.Muju_detail_imformation{
+            margin-left: 100px;
+			height: 120px;
+
+		}
+		.Muju_detail_CardId{
+            width: 90%px;
+            height:200px;
+            padding: 10px;
+            border:1px solid grey;
+		}
+		.Muju_detail_username{
+			margin-bottom: 3px;
+			margin-top: 10px;
+			display: inline-block;
+		}
+		.Muju_detail_introduce{
+         
+			margin-left: 6px;
+			font-size: 12px;
+			font-family: "sans-serif";
+		}
+		.Muju_detail_flag1{
+			float: right;
+			display: inline-block;
+			margin-top: 8px;
+			font-weight: bold;
+			font-size: 13px;
+			background-color: #FFFF70;
+		}
