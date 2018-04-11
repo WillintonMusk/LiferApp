@@ -1,0 +1,48 @@
+.contain_Z{
+    width:400px;
+    height:350px;
+
+
+    margin:auto;
+    position:absolute;
+    top:0;left:0;bottom:0;right:0;
+
+    border:solid 1px;
+}
+.title_Z{
+    width:80px;
+    height:50px;
+
+    margin:0 auto;
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 35px;
+}
+.input_Z{
+    width:220px;
+    height:35px;
+
+    margin-left:85px;
+    margin-top:20px;
+
+    /*background-color:rgba(185,185,185,0.25);*/
+    border: 1px solid black;
+    border-radius:2px;
+
+    font-size:16px;
+}
+.button_Z{
+    width:220px;
+    height:35px;
+
+    margin-left:85px;
+    margin-top: 25px;
+
+    font-size:16px;
+}
+.login{
+    margin-left: 160px;
+    margin-top: 10px;
+    text-decoration:underline;
+
+}

@@ -1,0 +1,25 @@
+.search_1{
+	text-align: left;width: 500px;margin: 0 auto;
+}
+.search_title{
+	color: #808080;font-size: 20px;
+}
+.selectCity{
+	border: none;padding: 5px 15px 5px 15px;
+}
+.searchText{
+	border: none; width: 300px;
+}
+.searchButtonTd{
+	background-color:#DCDCDC;
+}
+.searchButton{
+	border: none;width: 100px;background-color:  #DCDCDC;
+}
+.search_2{
+	margin-top: 10px;text-align: center;border:0;border-top:1px solid #000;
+	border-bottom:1px solid #000;padding: 8px;margin-bottom: 0;
+}
+.Table{
+	border:1px solid #000;
+}
