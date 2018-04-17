@@ -10,17 +10,19 @@
         {this.props.children}
       </div>
  */
-import React, { Component, PropTypes }from 'react';
+import React, {Component, PropTypes }from 'react';
 import {Link} from 'react-router';
 import './App.css';
 import Denglu from '../Denglu_Zhuce/Denglu'
+import Zhuce from '../Denglu_Zhuce/Zhuce'
 
 export default class App extends React.Component {
     constructor (props) {
         super(props);
         this.state={
             userInfo:{"account":"","status":0,"avatar":""},
-            display: "none",
+            display_D: "none",
+            display_Z: "none",
             error:"",
             socket:"",
             searchName:"",
@@ -30,7 +32,7 @@ export default class App extends React.Component {
 
     setTopBar=()=>{
         if(this.state.userInfo.status===0){
-            return(<Link onClick={this.setDialog}>登录/注册|</Link>);
+            return(<Link onClick={()=>{this.setDialog("Dialog_D",1)}}>登录/注册|</Link>);
         }
         else if(this.state.userInfo.status===1){
             return(<Link to="/Personal_page" ><img className="avatar" src={this.state.userInfo.avatar}/></Link>);
@@ -40,28 +42,36 @@ export default class App extends React.Component {
         }
     }
 
+    setDialog=(name,display)=>{
+        if(name=="Dialog_D"){
+            if(display==0){
+                this.setState({
+                    display_D: "none"
+                });
+            }else if(display==1){
+                this.setState({
+                    display_D: "block",
+                    display_Z:"none"
+                });
+            }
+        }else if(name=="Dialog_Z"){
+            if(display==0){
+                this.setState({
+                    display_Z: "none"
+                });
+            }else if(display==1){
+                this.setState({
+                    display_Z: "block",
+                    display_D:"none"
+                });
+            }
+        }
+
+    }
+
     setAccount=(userInfo)=>{
         this.setState({
             userInfo:userInfo
-        });
-    }
-
-    setDialog=()=>{
-        if(this.state.display==="none"){
-            this.setState({
-                display: "block"
-            });
-        }else{
-            this.setState({
-                display: "none"
-            });
-        }
-    }
-
-    updateSearch=(newsearchCity,newsearchName)=>{
-        this.setState({
-            searchCity:newsearchCity,
-            searchName:newsearchName
         });
     }
 
@@ -83,6 +93,13 @@ export default class App extends React.Component {
         }
     }
 
+    updateSearch=(newsearchCity,newsearchName)=>{
+        this.setState({
+            searchCity:newsearchCity,
+            searchName:newsearchName
+        });
+    }
+
     render(){
         return(
         <div>
@@ -99,10 +116,9 @@ export default class App extends React.Component {
                 </div>
             </div>
 
-            {/*{this.displayChildren()}*/}
+            <Denglu setDialog={this.setDialog} setAccount={this.setAccount} display_D={this.state.display_D}/>
+            <Zhuce setDialog={this.setDialog} setAccount={this.setAccount} display_Z={this.state.display_Z}/>
 
-            <Denglu setAccount={this.setAccount} setDialog={this.setDialog} display={this.state.display}/>
-            {/*<Zhuce*/}
             {this.displayChildren()}
 
         </div>

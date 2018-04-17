@@ -4,8 +4,8 @@ import { render } from 'react-dom';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router'
 import App from './components/App/App';
 import Home from './components/Home/Home';
-import Denglu from './components/Denglu_Zhuce/Denglu';
-import Zhuce from "./components/Denglu_Zhuce/Zhuce";
+// import Denglu from './components/Denglu_Zhuce/Denglu';
+// import Zhuce from "./components/Denglu_Zhuce/Zhuce";
 import Personal_page from './components/Personal_page/Personal_page';
 import Miju from './components/Miju/Miju';
 import Miyou from './components/Miyou/Miyou';
@@ -21,7 +21,7 @@ render((
             <IndexRoute component={Home}/>
 
             {/*<Route path="/Denglu&Zhuce" component={Denglu}/>*/}
-            <Route path="/Zhuce" component={Zhuce}/>
+            {/*<Route path="/Zhuce" component={Zhuce}/>*/}
 
             <Route path="/Miju/:searchName/:searchCity" component={Miju}/>
             <Route path="/Miju/:id" component={Miju_detail}/>

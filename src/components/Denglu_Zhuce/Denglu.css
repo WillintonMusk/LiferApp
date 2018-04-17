@@ -1,13 +1,11 @@
 .Dialog_D{
 
-    position:absolute;
-    background-color:rgba(102,102,102,0.5);
+    position: absolute;
+    background-color: rgba(102,102,102,0.5);
 }
-
 .contain_D{
     width: 400px;
     height: 350px;
-
 
     margin:auto;
     position:absolute;
@@ -26,6 +24,7 @@
     font-weight: bold;
     font-size: 35px;
 }
+
 .input_D{
     width: 220px;
     height: 35px;
@@ -51,8 +50,9 @@
 .register{
     margin-left: 160px;
     margin-top: 20px;
-    text-decoration:underline;
 
+    text-decoration:underline;
+    cursor:pointer;
 }
 
 

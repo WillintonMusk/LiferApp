@@ -1,0 +1,60 @@
+.Dialog_P{
+
+    position: absolute;
+    background-color: rgba(102,102,102,0.5);
+}
+.contain_P{
+    width: 450px;
+    height: 300px;
+
+    margin:auto;
+    position:absolute;
+    top:0;left:0;bottom:0;right:0;
+
+    border: solid 1px;
+
+    background-color:white;
+}
+.title_P{
+    width: 80px;
+    height: 50px;
+
+    margin: 0 auto;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.left{
+    float: left;
+}
+.pre_photo{
+    width: 150px;
+    height: 150px;
+
+    margin-left: 40px;
+    margin-top: 10px;
+
+    border: solid 1px;
+}
+.img{
+    width: 150px;
+    height: 150px;
+}
+.finish_P{
+    width: 150px;
+    height: 35px;
+
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.adjust{
+    width: 200px;
+    height: 200px;
+
+    margin-left: 220px;
+    margin-top: 10px;
+
+    border: solid 1px;
+}
+

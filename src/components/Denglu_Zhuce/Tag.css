@@ -1,0 +1,64 @@
+.Dialog_T{
+
+    position: absolute;
+    background-color: rgba(102,102,102,0.5);
+}
+.contain_T{
+    width: 400px;
+    height: 300px;
+
+    margin:auto;
+    position:absolute;
+    top:0;left:0;bottom:0;right:0;
+
+    border: solid 1px;
+
+    background-color:white;
+}
+.title_T{
+    width: 80px;
+    height: 50px;
+
+    margin-top: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.tag_ch{
+    width: 150px;
+    height: 150px;
+
+    margin-left: 30px;
+
+    border-right:1px dashed black;
+}
+.finish_T{
+    width: 150px;
+    height: 35px;
+
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.tag_un{
+    width: 180px;
+    height: 160px;
+
+    margin-left: 200px;
+    margin-top: 10px;
+
+    /*border: solid 1px;*/
+}
+.addTag{
+    width: 100px;
+    height: 30px;
+
+    margin-top: 10px;
+    margin-left: 40px;
+    border: 1px solid black;
+}
+.add{
+    width: 50px;
+    height: 30px;
+}
